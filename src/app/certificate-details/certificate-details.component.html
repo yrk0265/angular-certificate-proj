@@ -1,0 +1,66 @@
+<app-header></app-header>
+<div class="container">
+<div class="row justify-content-center">
+    <div class="panel-heading" style="text-align: center;">Certificate Details <button *ngIf="this.ButtonVisible" class="btn btn-primary pull-left" style="margin-bottom:10px" (click)="redirect('')">Add Certificate</button> 
+        <!-- <button type="button" (click)="search(this.certificatename,this.resourcename,this.type,this.location,this.issuer)" class="btn btn-primary pull-right">
+            Search
+        </button>--></div> 
+        <table name="certificatedetails" class="table table-striped table-responsive table-bordered table-sm">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">
+                Certificate Name
+                <input class="col-sm-12" (keyup)="this.loadData()" [(ngModel)]="this.certificatename" type="text" id="cname" name="cname">
+            </th>
+            <th scope="col">
+                Certificate Active Status
+            </th>
+            <th scope="col">Resource Id</th>
+            <th scope="col">
+                Resource Name
+                <input class="col-sm-12" (keyup)="this.loadData()" [(ngModel)]="this.resourcename" type="text" id="rname" name="rname">
+            </th>
+            <th scope="col">
+                Type
+                <input class="col-sm-12" (keyup)="this.loadData()" [(ngModel)]="this.type" type="text" id="type" name="type">
+            </th>
+            <th scope="col">
+                Resource Location
+                <input class="col-sm-12" type="text" (keyup)="this.loadData()" [(ngModel)]="this.location" id="location" name="location">
+            </th>
+            <th scope="col">
+                Issuer
+                <input class="col-sm-12" type="text" (keyup)="this.loadData()" [(ngModel)]="this.issuer" id="issuer" name="issuer">
+            </th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">
+                Expiration Date
+            </th>
+            <th scope="col">
+                Edit
+            </th>
+            <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr name="rows" *ngFor="let row of data">
+            <th scope="row">{{row.id}}</th>
+            <td>{{row.certificate_name}}</td>
+            <td>{{row.certificate_active_status}}</td>
+            <td>{{row.resource_id}}</td>
+            <td>{{row.resource_name}}</td>
+            <td>{{row.type}}</td>
+            <td>{{row.resource_location}}</td>
+            <td>{{row.issuer}}</td>
+            <td>{{row.issue_date}}</td>
+            <td>{{row.expiration_date}}</td>
+            <td><button type="button" (click)="redirect(row)" class="btn btn-primary btn-sm">Edit</button></td>
+            <td><input type="checkbox" name="flexCheckDefault_{{row.id}}" value="" style="padding: 5px;text-align:center" id="flexCheckDefault_{{row.id}}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <app-pagination [totalItems]="totalPages" class="pagination" (pagingChanged)="this.parentEventHandlerFunction($event)"></app-pagination>
+    <button *ngIf="this.ButtonVisible" (click)="Delete()" class="btn btn-danger float">Delete</button>
+</div>

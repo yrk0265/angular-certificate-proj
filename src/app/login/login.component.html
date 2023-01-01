@@ -1,0 +1,19 @@
+<app-login-header></app-login-header>
+<form class="login">
+  <div class="form-group col-md-4 col-xs-4">
+
+  </div>
+    <div class="form-group col-md-12 col-xs-12 ">
+      <label class="form-label" for="email">Email address:</label>
+      <input type="email" required class="form-control form-control-sm" id="email" value="yrk0265@gmail.com">
+    </div>
+    <div class="form-group col-xs-12">
+      <label class="form-label" for="pwd">Password:</label>
+      <input type="password" class="form-control form-control-sm" id="pwd" value="def@123" required>
+    </div>
+    <div class="col-xs-12">
+      <button type="button" (click)="login()" style="margin:10px" class="btn btn-primary pull-right">Login</button>
+      <a routerLink="/registration" style="margin:10px" class="btn btn-danger pull-right">Register</a>
+      <a routerLink="/forgot-password" style="margin:10px;" class="btn btn-danger pull-right">Forgot Password</a>
+    </div>
+  </form>

@@ -1,0 +1,11 @@
+.float {
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+    width: 5.5em;
+    height: 2.5em;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+  }

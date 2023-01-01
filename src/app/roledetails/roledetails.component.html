@@ -1,0 +1,6 @@
+<select id="role" #mySelect [ngModel]="this.selected" (change)="modelchange(mySelect.value)" name="selected" style="width:1110px;" class="form-control">
+    <option *ngFor="let option of x;" [value]="option.role_id" [selected]="option.role_id==1">
+		{{ option?.role_name }}
+	</option>
+</select>
+<!-- {{this.roleid}} -->

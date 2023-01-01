@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container">
+    <!-- (click)="redirect('')" *ngIf="this.ButtonVisible"-->
+    <h3>Role Details {{this.AddorEdit}}</h3>
+    <div class="container-login alignment-center-top rounded">
+        <form class="container rounded">
+            <div class="col-xs-12">
+                <label for="rolename">Role Name:</label>
+                <input type="rolename" [(ngModel)]="this.RoleName" required class="form-control" id="email"  name="RoleName">
+            </div>
+            <div class="col-xs-12">
+                <label for="rolename">Description :</label>
+                <input type="rolename" [(ngModel)]="this.description" required class="form-control" id="description"  name="description">
+            </div>
+            <div class="col-xs-12">
+                <label for="status">Status:</label>
+                <label class="switch">
+                  <input type="checkbox" [(ngModel)]="this.IsActive" name="IsActive" style="margin-top:10px;padding-top: 10px;padding-right: 10px;padding-bottom: 0px;padding-left: 0px;text-align: center;" >
+                  <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="col-xs-12" style="padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px;text-align: center;">
+                <button type="button" (click)="save()"  class="btn btn-primary ">Save</button>
+            </div>
+          </form>
+    </div>
+</div>
